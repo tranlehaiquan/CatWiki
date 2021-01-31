@@ -1,4 +1,3 @@
-
 const postCssPlugins = require('./postcss-config.js');
 
 module.exports = {
@@ -43,15 +42,19 @@ module.exports = {
       resolve: 'gatsby-plugin-webfonts',
       options: {
         fonts: {
-          google: [{
-            family: 'Montserrat',
-            variants: ['300', '400', '600'],
-            fontDisplay: 'swap',
-          }, ],
+          google: [
+            {
+              family: 'Montserrat',
+              variants: ['300', '400', '600'],
+              fontDisplay: 'swap',
+            },
+          ],
         },
         formatAgents: {
-          woff: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36',
-          woff2: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36',
+          woff:
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36',
+          woff2:
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36',
         },
       },
     },
@@ -59,4 +62,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

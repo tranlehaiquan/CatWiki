@@ -1,0 +1,14 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.root {
+  max-width: 1244px;
+  margin-left: auto;
+  margin-right: auto;
+  @include padding(0, 4, 0, 4);
+}
+
+.noGutter {
+  padding-left: 0px;
+  padding-right: 0px;
+}

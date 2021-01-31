@@ -1,0 +1,11 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.logo {
+  @include margin-top(0);
+}
+
+.root {
+  @include margin-top(1);
+  @include margin-bottom(1);
+}

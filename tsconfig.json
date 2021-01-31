@@ -18,5 +18,5 @@
     "jsx": "react"
   },
   "types": ["node", "webpack", "react", "react-dom", "./src/react-app.d.ts"],
-  "include": ["src"],
+  "include": ["src"]
 }

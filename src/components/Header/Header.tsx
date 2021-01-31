@@ -1,42 +1,31 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import Container from '../Container';
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
+import classes from './Header.module.scss';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+export const Header: React.FC<{ siteTitle: string }> = ({ siteTitle }) => {
+  const {
+    file: { publicURL },
+  } = useStaticQuery(graphql`
+    {
+      file(name: { eq: "CatwikiLogo" }) {
+        id
+        publicURL
+      }
+    }
+  `);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  return (
+    <header className={classes.root}>
+      <Container noGutter>
+        <h1 className={classes.logo}>
+          <Link to="/">
+            <img src={publicURL} title={siteTitle} alt={siteTitle} />
+          </Link>
+        </h1>
+      </Container>
+    </header>
+  );
+};
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;
