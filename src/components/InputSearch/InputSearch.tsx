@@ -9,6 +9,7 @@ import Input from './Input';
 const InputSearch = () => {
   const [searchResult, setSearchResult] = useState<Breed[]>([]);
   const [val, setVal] = useState('');
+  const [isEmpty, setIsEmpty] = useState(false);
   const [asyncState, axiosFn] = useAsyncFn(async (breeds: string) => {
     if (!breeds) {
       setSearchResult([]);
@@ -16,10 +17,12 @@ const InputSearch = () => {
     }
     const data = await searchBreedsByName(breeds);
     setSearchResult(data);
+    setIsEmpty(data.length === 0);
   }, []);
 
   useDebounce(
     () => {
+      setIsEmpty(false);
       axiosFn(val);
     },
     500,
@@ -41,7 +44,8 @@ const InputSearch = () => {
         }}
         onBlur={handleBlur}
       />
-      {asyncState.loading && <div className={classes.options}>loading...</div>}
+      {asyncState.loading && <div className={classes.options}>Loading...</div>}
+      {isEmpty && <div className={classes.options}>No result with <strong>{val}</strong></div>}
       {!!searchResult.length && !asyncState.loading && (
         <div className={classes.options}>
           {searchResult.map((breed) => (

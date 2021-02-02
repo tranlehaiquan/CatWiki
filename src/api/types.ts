@@ -16,4 +16,10 @@ export type Breed = {
   temperament: string;
   weight_imperial: string;
   wikipedia_url: string;
+  image: {
+    height: number;
+    width: number;
+    id: string;
+    url: string;
+  }
 };

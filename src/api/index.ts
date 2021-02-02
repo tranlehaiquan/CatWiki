@@ -7,7 +7,7 @@ type ListBreedParams = {
   limit?: number;
 };
 
-export const getListBreeds = async (params: ListBreedParams): Promise<Breed[]> => {
+export const getListBreeds = async (params?: ListBreedParams): Promise<Breed[]> => {
   const { data } = await axios.get('/breeds', {
     params,
   });
