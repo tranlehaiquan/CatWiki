@@ -1,0 +1,18 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.root {
+  background-color: $color-white;
+  display: inline-block;
+  min-width: 395px;
+  border-radius: $input-radius;
+}
+
+.input {
+  border: none;
+  font-size: 18px;
+  padding: 24px;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+}

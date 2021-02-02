@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Container from '../Container';
+import InputSearch from '../../components/InputSearch';
 import classes from './Banner.module.scss';
 
 const Banner = () => {
@@ -21,6 +22,7 @@ const Banner = () => {
         <img src={publicURL} className={classes.image} alt="cat logo" />
         <p className={classes.title}>Get to know more about your cat breed</p>
       </div>
+      <InputSearch />
     </Container>
   );
 };
