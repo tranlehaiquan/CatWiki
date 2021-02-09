@@ -45,7 +45,9 @@ const InputSearch = () => {
         onBlur={handleBlur}
       />
       {asyncState.loading && <div className={classes.options}>Loading...</div>}
-      {isEmpty && <div className={classes.options}>No result with <strong>{val}</strong></div>}
+      
+      {isEmpty && val && <div className={classes.options}>No result with <strong>{val}</strong></div>}
+
       {!!searchResult.length && !asyncState.loading && (
         <div className={classes.options}>
           {searchResult.map((breed) => (
