@@ -1,6 +1,8 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Image from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby';
+
+import Link from '../Link';
 import Container from '../Container';
 import classes from './WhyShouldHaveCat.module.scss';
 
@@ -35,8 +37,6 @@ const WhyShouldHaveCat: React.FC<Props> = () => {
     }
   `);
 
-  console.log(data);
-
   return (
     <Container>
       <div className={classes.root}>
@@ -51,9 +51,15 @@ const WhyShouldHaveCat: React.FC<Props> = () => {
         </div>
 
         <div className={classes.images}>
-          <Image fluid={data.image1.childImageSharp.fluid} className={classes.image1} />
-          <Image fluid={data.image2.childImageSharp.fluid} className={classes.image2}/>
-          <Image fluid={data.image3.childImageSharp.fluid} className={classes.image3}/>
+          <div className={classes.image1}>
+            <Image fluid={data.image1.childImageSharp.fluid} />
+          </div>
+          <div className={classes.image2}>
+            <Image fluid={data.image2.childImageSharp.fluid} />
+          </div>
+          <div className={classes.image3}>
+            <Image fluid={data.image3.childImageSharp.fluid} />
+          </div>
         </div>
       </div>
     </Container>

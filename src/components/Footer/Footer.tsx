@@ -18,9 +18,10 @@ export default function Footer() {
   return (
     <Container className={classes.root}>
       <footer className={classes.footer}>
-        <img src={publicURL} alt="logo cat" />© {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <img src={publicURL} alt="logo cat" />
+        <p>
+          © Quan Tran - devchallenge.io 2020 <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </p>
       </footer>
     </Container>
   );

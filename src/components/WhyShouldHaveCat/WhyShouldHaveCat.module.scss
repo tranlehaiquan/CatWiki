@@ -1,16 +1,15 @@
 .root {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding-top: 100px;
 }
 
 .images {
   display: grid;
-  grid-template-columns: 50px 50px 50px 50px;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "images1 images1 images2 images2"
-    "images3 images3 images2 images2"
-    "images3 images3 . .";
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  height: 500px;
+  grid-gap: 1rem;
 }
 
 .images img {
@@ -18,14 +17,19 @@
   display: inline-block;
 }
 
+.image1, .image2, .image3 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .image1 {
-  grid-area: images1;
+  grid-area: 2 / 2 / 4 / 5;
 }
 
 .image2 {
-  grid-area: images2;
+  grid-area: 1 / 5 / 7 / 9;
 }
 
 .image3 {
-  grid-area: images3;
+  grid-area: 1 / 1 / 2 / 5;
 }

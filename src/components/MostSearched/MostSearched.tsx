@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import classes from './MostSearched.module.scss';
+import { useAsync } from 'react-use';
+
+import Link from '../Link';
 import Container from '../Container';
 import { getListBreeds } from '../../api';
-import { useAsync } from 'react-use';
 import { Breed } from '../../api/types';
 
 const MostSearched: React.FC = () => {

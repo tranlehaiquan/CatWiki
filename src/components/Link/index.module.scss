@@ -1,0 +1,7 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.link {
+  color: $typographic-link-p-font-color;
+  font-weight: 600;
+}

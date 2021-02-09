@@ -10,4 +10,12 @@
 
 .footer {
   @include padding(0.5, 0, 0.5, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.footer p {
+  margin: 0;
 }
