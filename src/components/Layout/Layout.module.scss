@@ -1,0 +1,6 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.child {
+  min-height: calc(100vh - 200px);
+}

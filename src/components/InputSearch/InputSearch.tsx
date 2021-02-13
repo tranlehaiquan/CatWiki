@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useAsyncFn, useDebounce } from 'react-use';
-import { searchBreedsByName } from '../../api';
+import { getBreedsByName } from '../../api';
 import { Breed } from '../../api/types';
 import classes from './InputSearch.module.scss';
+import Link from '../Link';
 
 import Input from './Input';
 
@@ -15,7 +16,7 @@ const InputSearch = () => {
       setSearchResult([]);
       return;
     }
-    const data = await searchBreedsByName(breeds);
+    const data = await getBreedsByName(breeds);
     setSearchResult(data);
     setIsEmpty(data.length === 0);
   }, []);
@@ -29,10 +30,10 @@ const InputSearch = () => {
     [val],
   );
 
-  const handleBlur = () => {
-    setSearchResult([]);
-    setVal('');
-  };
+  // const handleBlur = () => {
+  //   setSearchResult([]);
+  //   setVal('');
+  // };
 
   return (
     <div className={classes.root}>
@@ -42,7 +43,7 @@ const InputSearch = () => {
         onChange={({ currentTarget }) => {
           setVal(currentTarget.value);
         }}
-        onBlur={handleBlur}
+        // onBlur={handleBlur}
       />
       {asyncState.loading && <div className={classes.options}>Loading...</div>}
       
@@ -51,9 +52,9 @@ const InputSearch = () => {
       {!!searchResult.length && !asyncState.loading && (
         <div className={classes.options}>
           {searchResult.map((breed) => (
-            <div key={breed.id} className={classes.option}>
+            <Link to={`/breeds/${breed.name}`} key={breed.id} className={classes.option}>
               {breed.name}
-            </div>
+            </Link>
           ))}
         </div>
       )}

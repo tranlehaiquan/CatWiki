@@ -8,6 +8,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Footer from '../Footer';
+import classes from './Layout.module.scss';
 
 import Header from '../Header';
 
@@ -25,7 +26,7 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
+      <div className={classes.child}>
         <main>{children}</main>
       </div>
       <Footer />

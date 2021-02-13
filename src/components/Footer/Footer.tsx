@@ -20,7 +20,7 @@ export default function Footer() {
       <footer className={classes.footer}>
         <img src={publicURL} alt="logo cat" />
         <p>
-          © Quan Tran - devchallenge.io 2020 <a href="https://www.gatsbyjs.com">Gatsby</a>
+          © Quan Tran - devchallenge.io 2021 <a href="https://www.gatsbyjs.com">Gatsby</a>
         </p>
       </footer>
     </Container>
