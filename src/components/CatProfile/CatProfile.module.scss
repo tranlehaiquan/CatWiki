@@ -2,28 +2,50 @@
 @import '../../assets/scss/mixins';
 
 .catImg {
-  height: 370px;
-  width: 370px;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 1.5rem;
   display: block;
-}
-
-.wrapper {
-  display: flex;
-}
-
-.avatarWrapper {
-  flex: 0 0 370px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .info {
-  flex: 1;
-  padding-left: 110px;
+  padding-left: 0;
 
   h1 {
     margin: 0;
     font-size: 36px;
     font-weight: 600;
+  }
+}
+
+@include breakpoint-md {
+
+  .catImg {
+    height: 370px;
+    width: 370px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    display: block;
+  }
+
+  .wrapper {
+    display: flex;
+  }
+
+  .avatarWrapper {
+    flex: 0 0 370px;
+  }
+
+  .info {
+    flex: 1;
+    padding-left: 110px;
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 600;
+    }
   }
 }

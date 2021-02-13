@@ -24,13 +24,11 @@ const Layout: React.FC = ({ children }) => {
   `);
 
   return (
-    <>
+    <div className={classes.child}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div className={classes.child}>
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 
