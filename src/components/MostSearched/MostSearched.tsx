@@ -5,12 +5,12 @@ import { useAsync } from 'react-use';
 import Link from '../Link';
 import Container from '../Container';
 import { getListBreeds } from '../../api';
-import { Breed } from '../../api/types';
+import { BreedWithImg } from '../../api/types';
 
 const MostSearched: React.FC = () => {
-  const [searchResult, setSearchResult] = useState<Breed[]>([]);
+  const [searchResult, setSearchResult] = useState<BreedWithImg[]>([]);
   const state = useAsync(async () => {
-    const breeds = await getListBreeds();
+    const breeds = await getListBreeds({ limit: 4 });
     setSearchResult(breeds);
   });
 
@@ -19,16 +19,16 @@ const MostSearched: React.FC = () => {
       <p className={classes.title}>Most Searched breeds</p>
       <div className={classes.headingWrapper}>
         <p className={classes.heading}>66+ Breeds For you to discover</p>
-        <Link to="/">SEE MORE</Link>
+        <Link to="/breeds">SEE MORE</Link>
       </div>
       <div>
         {state.loading && 'loading...'}
         <div className={classes.breeds}>
           {searchResult.slice(0, 4).map((breed) => (
-            <div key={breed.id} className={classes.breed}>
+            <Link to={`/breeds/${breed.name}`} key={breed.id} className={classes.breed}>
               <img src={breed.image.url} className={classes.breedImg} />
-              <p>{breed.name}</p>
-            </div>
+              <p className={classes.breedName}>{breed.name}</p>
+            </Link>
           ))}
         </div>
       </div>
