@@ -1,1 +1,1 @@
-export { default } from './WhyShouldHaveCat'
+export { default } from './WhyShouldHaveCat';

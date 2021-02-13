@@ -13,7 +13,7 @@ interface Props {
   healthIssues: number;
   socialNeeds: number;
   strangerFriendly: number;
-};
+}
 
 const CatStats: React.FC<Props> = (props) => {
   return (
@@ -30,6 +30,6 @@ const CatStats: React.FC<Props> = (props) => {
       <CatRating label="Stranger Friendly" rating={props.strangerFriendly} />
     </div>
   );
-}
+};
 
 export default CatStats;

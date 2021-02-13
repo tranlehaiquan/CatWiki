@@ -29,7 +29,9 @@ const ListBreed: React.FC = () => {
                 <img src={breed.image.url} className={classes.breedImg} />
               </div>
               <div className={classes.info}>
-                <h3 className={classes.breedName}>{index + 1}. {breed.name}</h3>
+                <h3 className={classes.breedName}>
+                  {index + 1}. {breed.name}
+                </h3>
                 <p>{breed.description}</p>
               </div>
             </Link>

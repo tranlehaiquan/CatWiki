@@ -19,12 +19,12 @@ const MostSearched: React.FC = () => {
       <p className={classes.title}>Most Searched breeds</p>
       <div className={classes.headingWrapper}>
         <p className={classes.heading}>66+ Breeds For you to discover</p>
-        <Link to="/breeds">SEE MORE</Link>
+        <Link to="/breeds" className={classes.readmore}>SEE MORE</Link>
       </div>
       <div>
         {state.loading && 'loading...'}
         <div className={classes.breeds}>
-          {searchResult.slice(0, 4).map((breed) => (
+          {searchResult.map((breed) => (
             <Link to={`/breeds/${breed.name}`} key={breed.id} className={classes.breed}>
               <img src={breed.image.url} className={classes.breedImg} />
               <p className={classes.breedName}>{breed.name}</p>

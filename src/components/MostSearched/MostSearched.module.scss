@@ -6,21 +6,21 @@
   border-bottom-left-radius: 21px;
   border-bottom-right-radius: 21px;
   padding-top: 40px;
-  padding-bottom: 94px;
 }
 
 .title {
   font-size: 18px;
   font-weight: 500;
   padding-bottom: 10px;
-  margin-bottom: 36px;
+  margin-bottom: 17px;
+  margin-top: 0;
   position: relative;
 
   &::before {
     content: '';
     position: absolute;
     bottom: 0;
-    height: 2px;
+    height: 4px;
     width: 60px;
     left: 0;
     background-color: #4D270C;
@@ -28,32 +28,36 @@
 }
 
 .headingWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 46px;
+  margin-bottom: 16px;
 }
 
 .heading {
-  font-size: 48px;
-  max-width: 530px;
-  line-height: 59px;
+  font-size: 18px;
   font-weight: 800;
   margin: 0;
+  max-width: 180px;
 }
 
 .breeds {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 51px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 13px;
+  grid-row-gap: 13px;
+}
+
+@include breakpoint-md {
+  .breeds {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 51px;
+  }
 }
 
 .breed {
-  height: 220px;
+  // height: 140px;
 }
 
 .breedImg {
-  height: 220px;
+  height: 140px;
   width: 100%;
   object-fit: cover;
   border-radius: 24px;
@@ -67,4 +71,43 @@
 .breedName {
   margin-top: 20px;
   font-weight: 600;
+}
+
+.readmore {
+  display: none;
+}
+
+@include breakpoint-md {
+  .headingWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 46px;
+  }
+
+  .root {
+    padding-bottom: 94px;
+  }
+
+  .breedImg {
+    height: 220px;
+  }
+
+  .heading {
+    line-height: 59px;
+    max-width: 530px;
+    font-size: 48px;
+  }
+
+  .title {
+    margin-bottom: 36px;
+
+    &::before {
+      height: 2px;
+    }
+  }
+
+  .readmore {
+    display: block;
+  }
 }

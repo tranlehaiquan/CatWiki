@@ -3,22 +3,46 @@
 
 .root {
   background-image: url('../../images/heroImage.jpg');
-  min-height: 583px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  padding-top: 115px;
-  padding-top: 144px;
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .title {
   color: $color-white;
-  font-size: 24px;
   max-width: 370px;
+  font-size: 16px;
 }
 
-.image {
-  min-width: 300px;
+.imageDesktop {
+  display: none;
+}
+
+@include breakpoint-md {
+  .root {
+    min-height: 583px;
+    padding-top: 144px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .imageMobile {
+    display: none;
+  }
+
+  .imageDesktop {
+    display: block;
+  }
+
+  .image {
+    min-width: 300px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
 }

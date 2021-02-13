@@ -30,24 +30,22 @@ const InputSearch = () => {
     [val],
   );
 
-  // const handleBlur = () => {
-  //   setSearchResult([]);
-  //   setVal('');
-  // };
-
   return (
     <div className={classes.root}>
       <Input
         value={val}
-        placeholder="Debounced input"
+        placeholder="Search"
         onChange={({ currentTarget }) => {
           setVal(currentTarget.value);
         }}
-        // onBlur={handleBlur}
       />
       {asyncState.loading && <div className={classes.options}>Loading...</div>}
-      
-      {isEmpty && val && <div className={classes.options}>No result with <strong>{val}</strong></div>}
+
+      {isEmpty && val && (
+        <div className={classes.options}>
+          No result with <strong>{val}</strong>
+        </div>
+      )}
 
       {!!searchResult.length && !asyncState.loading && (
         <div className={classes.options}>
