@@ -20,13 +20,14 @@ function SEO({ description = "meow meow meow", lang, meta, title }) {
             title
             description
             author
+            url
           }
         }
       }
     `,
   );
 
-  const ogImg = defaultMetaImg;
+  const ogImg = site.siteMetadata.url + defaultMetaImg;
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
