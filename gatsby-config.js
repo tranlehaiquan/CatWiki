@@ -2,8 +2,8 @@ const postCssPlugins = require('./postcss-config.js');
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Cat wiki`,
+    description: `Meow meow meow, con mèo ngu ngok.`,
     author: `@gatsbyjs`,
   },
   plugins: [

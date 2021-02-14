@@ -7,7 +7,7 @@ import WhyShouldHaveCat from '../components/WhyShouldHaveCat';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home"/>
     <Banner />
     <MostSearched />
     <WhyShouldHaveCat />
