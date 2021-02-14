@@ -1,4 +1,5 @@
 const postCssPlugins = require('./postcss-config.js');
+const siteConfig = require('./config.js');
 
 module.exports = {
   siteMetadata: {
@@ -17,6 +18,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [siteConfig.googleAnalyticsId],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
