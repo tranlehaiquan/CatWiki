@@ -6,6 +6,7 @@ module.exports = {
     title: `Cat wiki`,
     description: `Meow meow meow, con mèo ngu ngok.`,
     author: `@gatsbyjs`,
+    url: siteConfig.url,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

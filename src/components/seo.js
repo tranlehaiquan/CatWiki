@@ -9,6 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import defaultMetaImg from '../images/whyShouldHaveCats/whyShouldHaveCats2.png';
 
 function SEO({ description = "meow meow meow", lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -24,6 +25,8 @@ function SEO({ description = "meow meow meow", lang, meta, title }) {
       }
     `,
   );
+
+  const ogImg = defaultMetaImg;
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
@@ -51,6 +54,10 @@ function SEO({ description = "meow meow meow", lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: ogImg,
         },
         {
           name: `twitter:card`,
