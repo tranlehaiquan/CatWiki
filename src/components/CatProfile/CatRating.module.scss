@@ -1,4 +1,49 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
 .root {
   margin-top: 32px;
   margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.label {
+  flex: 0 0 100%;
+}
+
+.rating {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 100%;
+}
+
+.point {
+  flex: 0 0 18%;
+  display: inline-block;
+  color: transparent;
+  background-color: #E0E0E0;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.pointActive {
+  background-color: #544439;
+}
+
+@include breakpoint-md {
+  .root {
+    align-items: center;
+  }
+
+  .label {
+    flex: 0 0 140px;
+  }
+
+  .rating {
+    flex: 0 0 calc(100% - 140px);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }

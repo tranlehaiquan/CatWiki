@@ -10,9 +10,16 @@ interface Props {
 
 const CatRating: React.FC<Props> = ({ label, rating, className = '' }) => {
   return (
-    <p className={cls(className, classes.root)}>
-      <strong>{label}: </strong> {rating}
-    </p>
+    <div className={cls(className, classes.root)}>
+      <strong className={classes.label}>{label}: </strong>{' '}
+      <p className={classes.rating}>
+        {[...new Array(5)].map((v, index) => (
+          <span key={`star-${index}`} className={cls(classes.point, rating >= index + 1 && classes.pointActive)}>
+            {index + 1}
+          </span>
+        ))}
+      </p>
+    </div>
   );
 };
 

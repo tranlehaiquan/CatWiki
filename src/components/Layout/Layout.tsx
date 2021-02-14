@@ -24,9 +24,9 @@ const Layout: React.FC = ({ children }) => {
   `);
 
   return (
-    <div className={classes.child}>
+    <div className={classes.root}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <main>{children}</main>
+      <main className={classes.child}>{children}</main>
       <Footer />
     </div>
   );
