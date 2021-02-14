@@ -1,4 +1,4 @@
 module.exports = {
-  googleAnalyticsId: 'G-N4G44PXFR4',
+  googleAnalyticsId: 'G-XLKZ36JKTT',
   url: 'https://wiki-breed-cat.netlify.app'
 };
